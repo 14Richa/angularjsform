@@ -19,9 +19,8 @@
  
         function Login(username, password, callback) {
  
-            /* Dummy authentication for testing, uses $timeout to simulate api call
-             ----------------------------------------------*/
-            $timeout(function () {
+            //  ----------------------------------------------*/
+             $timeout(function () {
                 var response;
                 UserService.getByUsername(username)
                     .then(function (user) {
@@ -34,17 +33,17 @@
                     });
             }, 1000);
  
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
-        }
+            /* Use this 
+         ----------------------------------------------*/
+        // $http.post('/api/authenticate', { username: username, password: password })
+        //     .success(function (response) {
+        //         callback(response);
+        //     });
+    }
  
         function SetCredentials(username, password) {
             var authdata = Base64.encode(username + ':' + password);
- 
+
             $rootScope.globals = {
                 currentUser: {
                     username: username,
@@ -52,7 +51,6 @@
                 }
             };
  
-            // set default auth header for http requests
             $http.defaults.headers.common['Authorization'] = 'Basic ' + authdata;
  
             // store user details in globals cookie that keeps user logged in for 1 week (or until they logout)
