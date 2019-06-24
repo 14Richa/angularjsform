@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
+import { LinkContainer } from "react-router-bootstrap";
 
 export default class Login extends Component {
   constructor(props) {
@@ -31,7 +32,7 @@ export default class Login extends Component {
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
-            <ControlLabel>Email</ControlLabel>
+            <ControlLabel>E-mail</ControlLabel>
             <FormControl
               autoFocus
               type="email"
@@ -47,6 +48,7 @@ export default class Login extends Component {
               type="password"
             />
           </FormGroup>
+          <LinkContainer to="/sucess">
           <Button
             block
             bsSize="large"
@@ -55,6 +57,7 @@ export default class Login extends Component {
           >
             Login
           </Button>
+          </LinkContainer>
         </form>
       </div>
     );

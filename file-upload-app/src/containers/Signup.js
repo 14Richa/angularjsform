@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      first: "",
+      last: "",
       email: "",
       password: ""
     };
@@ -30,21 +35,21 @@ export default class Login extends Component {
     return (
       <div className="Login">
         <form onSubmit={this.handleSubmit}>
-          <FormGroup controlId="name" bsSize="large">
+          <FormGroup controlId="first" bsSize="large">
             <ControlLabel>First Name</ControlLabel>
             <FormControl
               autoFocus
-              type="name"
-              value={this.state.name}
+              type="first"
+              value={this.state.first}
               onChange={this.handleChange}
             />
           </FormGroup>
-          <FormGroup controlId="Name" bsSize="large">
+          <FormGroup controlId="last" bsSize="large">
             <ControlLabel>Last Name</ControlLabel>
             <FormControl
-              value={this.state.name}
+              value={this.state.last}
               onChange={this.handleChange}
-              type="name"
+              type="last"
             />
           </FormGroup>
           <FormGroup controlId="email" bsSize="large">
@@ -63,6 +68,8 @@ export default class Login extends Component {
               type="password"
             />
           </FormGroup>
+          <LinkContainer to="/congrats">
+
           <Button
             block
             bsSize="large"
@@ -71,6 +78,7 @@ export default class Login extends Component {
           >
             Register
           </Button>
+          </LinkContainer>
         </form>
       </div>
     );
