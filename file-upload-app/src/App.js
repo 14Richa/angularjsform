@@ -10,25 +10,11 @@ import { LinkContainer } from "react-router-bootstrap";
 
 
 class App extends Component {
-  constructor(props) {
-  super(props);
 
-  this.state = {
-    isAuthenticated: false
-  };
-}
-
-userHasAuthenticated = authenticated => {
-  this.setState({ isAuthenticated: authenticated });
-}
 
   render() {
-    const childProps = {
-    isAuthenticated: this.state.isAuthenticated,
-    userHasAuthenticated: this.userHasAuthenticated
-    };
-
-  return (
+    
+    return (
     <div className="App container">
       <Navbar fluid collapseOnSelect>
         <Navbar.Header>
@@ -48,11 +34,13 @@ userHasAuthenticated = authenticated => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <Routes childProps={childProps} />
+      <Routes />
+     
 
     </div>
     );
   }
 }
+
 
 export default App;

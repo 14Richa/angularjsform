@@ -8,11 +8,11 @@ export default class Home extends Component {
         <div className="lander">
           <h1>You have successfully Logged-in.</h1>
           <div className="input-group">
-  <div className="input-group-prepend">
-    <span className="input-group-text" id="inputGroupFileAddon01">
-      Upload
-    </span>
-  </div>
+          <div className="input-group-prepend">
+        <span className="input-group-text" id="inputGroupFileAddon01">
+          Upload
+        </span>
+      </div>
   <div className="custom-file">
     <input
       type="file"
