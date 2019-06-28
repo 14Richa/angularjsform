@@ -11,8 +11,23 @@ import { LinkContainer } from "react-router-bootstrap";
 
 class App extends Component {
 
+  constructor(props) {
+   super(props);
+   this.state = {value: 0};
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event) {
+    this.state.value += 1; 
+    alert('Count is' + this.state.value);
+
+    event.preventDefault();
+  }
+
 
   render() {
+
     
     return (
     <div className="App container">
@@ -31,6 +46,10 @@ class App extends Component {
             <LinkContainer to="/login">
               <NavItem>Login</NavItem>
             </LinkContainer>
+            <LinkContainer to = "/about" >
+            <NavItem onClick={this.handleSubmit}>About</NavItem>
+            </LinkContainer>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -41,6 +60,7 @@ class App extends Component {
     );
   }
 }
+
 
 
 export default App;

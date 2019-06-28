@@ -7,6 +7,8 @@ import Signup from "./containers/Signup";
 //import AppliedRoute from "./components/AppliedRoute";
 import Congrats from "./containers/Congrats";
 import Sucess from "./containers/Sucess";
+import About from "./containers/About";
+
 
 
 
@@ -19,5 +21,6 @@ export default ({ childProps }) =>
     <Route path="/signup" exact component={Signup}/>
     <Route path="/congrats" exact component={Congrats}/>
     <Route path="/sucess" exact component={Sucess} />
+    <Route path="/about/:value" exact component={About} />
     <Route component={NotFound} />
   </Switch>;
