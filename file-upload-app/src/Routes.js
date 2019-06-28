@@ -21,6 +21,6 @@ export default ({ childProps }) =>
     <Route path="/signup" exact component={Signup}/>
     <Route path="/congrats" exact component={Congrats}/>
     <Route path="/sucess" exact component={Sucess} />
-    <Route path="/about/:value" exact component={About} />
+    <Route path="/about/:10" exact component={About} />
     <Route component={NotFound} />
   </Switch>;

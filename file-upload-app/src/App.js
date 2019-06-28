@@ -46,7 +46,7 @@ class App extends Component {
             <LinkContainer to="/login">
               <NavItem>Login</NavItem>
             </LinkContainer>
-            <LinkContainer to = "/about" >
+            <LinkContainer to = "/about/value" >
             <NavItem onClick={this.handleSubmit}>About</NavItem>
             </LinkContainer>
 
